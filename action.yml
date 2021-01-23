@@ -1,0 +1,9 @@
+name: 'Ship Monorepo'
+description: 'A handy action to choose what to ship in monorepos.'
+inputs:
+    gh_token:
+        required: true
+        description: 'Github token, required to compare commits.'
+runs:
+    using: 'node12'
+    main: './lib/bundle.js'

@@ -1,0 +1,23 @@
+name: Continuous Integration
+on: [pull_request]
+
+jobs:
+    test-and-lint:
+        runs-on: ubuntu-latest
+        name: Test and Lint
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Yarn setup
+              run: yarn
+            - name: Lint
+              run: yarn lint
+            - name: Test
+              run: yarn test
+            - name: Types
+              run: yarn types
+            - name: Self-run
+              uses: ./
+              with:
+                  gh_token: ${{ secrets.GITHUB_TOKEN }}
+

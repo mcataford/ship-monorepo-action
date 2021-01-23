@@ -1,0 +1,6 @@
+{
+    "projects": {
+        "proj1": "src/*",
+        "proj2": "lib/*"
+    }
+}
